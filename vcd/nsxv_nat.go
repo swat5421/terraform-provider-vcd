@@ -36,7 +36,7 @@ func natRuleCreate(natType string, setData natRuleDataSetter, getNatRule natRule
 
 		natRule.Action = natType
 
-		createdNatRule, err := edgeGateway.CreateNsxvNatRule(natRule)
+		createdNatRule, err := edgeGateway.CreateNsxvNatRule(natRule, d.Get("above_rule_id").(string))
 		if err != nil {
 			return fmt.Errorf("error creating new NAT rule: %s", err)
 		}

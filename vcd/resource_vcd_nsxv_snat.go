@@ -66,6 +66,12 @@ func resourceVcdNsxvSnat() *schema.Resource {
 				Computed:    true,
 				Description: "Optional. Allows to set custom rule tag",
 			},
+			"above_rule_id": &schema.Schema{
+				Type:        schema.TypeString,
+				ForceNew:    true,
+				Optional:    true,
+				Description: "This firewall rule will be inserted above the referred one",
+			},
 			"enabled": &schema.Schema{
 				Type:        schema.TypeBool,
 				Optional:    true,
